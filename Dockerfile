@@ -1,6 +1,6 @@
-FROM scratch
-
-ADD bin/picfit /picfit
-ADD ssl/ /etc/ssl
-
-CMD ["/picfit"]
+FROM golang:1.5
+MAINTAINER Timothy Chung <timchunght@gmail.com>
+ADD . /go/src/github.com/thoas/picfit
+WORKDIR /go/src/github.com/thoas/picfit
+RUN make build
+CMD ["/go/src/github.com/thoas/picfit/bin/picfit", "-c", "/go/src/github.com/thoas/picfit/config.json"]
