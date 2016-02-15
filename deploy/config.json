@@ -1,0 +1,12 @@
+{
+  "port": 8080,
+  "storage": {
+    "src": {
+      "type": "fs",
+      "location": "/tmp/image_cache"
+    }
+  },
+  "kvstore": {
+    "type": "cache"
+  }
+}
